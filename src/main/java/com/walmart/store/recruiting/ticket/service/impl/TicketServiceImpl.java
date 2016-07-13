@@ -108,10 +108,10 @@ public class TicketServiceImpl implements TicketService {
      */
     private List<SeatHold> getHoldTickets(Instant instant) {
         List<SeatHold> seatHolds = seatHoldMap.values()
-                                        .stream()
-                                        .filter(seatHold -> seatHold.getDate()
-                                        .isBefore(LocalDateTime.ofInstant(instant, ZoneId.systemDefault())))
-                                        .collect(Collectors.toList());
+                .stream()
+                .filter(seatHold -> seatHold.getDate()
+                        .isBefore(LocalDateTime.ofInstant(instant, ZoneId.systemDefault())))
+                .collect(Collectors.toList());
         return seatHolds;
     }
 
